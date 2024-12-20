@@ -33,10 +33,10 @@ export class ContactComponent {
 
 
         Aos.init({
-          duration:800,
+          duration:200,
           offset:200,
           once:false,
-          
+          delay:0,
         })
 
   }
