@@ -1,0 +1,23 @@
+<main>
+  <h2>CONTACT ME</h2>
+
+<form [formGroup]="FormData" (ngSubmit)="onSubmit()">
+    <input  type="text" formControlName="name" required   placeholder="Enter Your Names" data-aos="fade-right">
+
+    <ng-container *ngIf="FormData.get('name').invalid && FormData.get('name').touched">
+      <small *ngIf="FormData.get('name').hasError('required')">Names Is Required</small>
+    </ng-container>
+<input type="email" formControlName="email" required email placeholder="Enter Your Email" data-aos="fade-up">
+<ng-container *ngIf="FormData.get('email').invalid && FormData.get('email').touched">
+  <small *ngIf="FormData.get('email').hasError('required')">Email Is Required</small>
+  <small *ngIf="FormData.get('email').hasError('email')">Please enter a valid email address.</small>
+</ng-container>
+<textarea name="" id="" formControlName="msg" required minlength placeholder="Enter Your Message" data-aos="fade-right"></textarea>
+<ng-container *ngIf="FormData.get('msg').invalid && FormData.get('msg').touched">
+  <small *ngIf="FormData.get('msg').hasError('required')">Message Is Required</small>
+  <small *ngIf="FormData.get('msg').hasError('minlength')"> Please enter at least 10 characters for your message.</small>
+</ng-container>
+<!-- <p *ngIf="Yessend"> Message sent successfully ✅</p> -->
+<button type="submit" >Send Message</button>
+  </form>
+</main>

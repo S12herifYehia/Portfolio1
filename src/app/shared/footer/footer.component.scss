@@ -1,0 +1,54 @@
+@import '../../../styles/vars';
+// @include '../../../styles/_vars.scss';
+@import '../../../styles/mixin';
+
+footer{
+  background-color:#0b0909;
+  margin-top: 50px;
+
+  padding: 20px 0px 0px;
+  text-align: center;
+  h2{
+    font-size: $h1-font-size;
+  }
+  .links{
+    @include flex_Container(flex,center,center);
+    gap: 50px !important;
+    margin:2rem 0px !important;
+   a{
+    color: $white-color;
+
+    transition: $transition-medium;
+    &:hover{
+      transform: translateY(-5px);
+      color: $text-color;
+    }
+   }
+  }
+
+  .icons{
+    @include flex_Container(flex,center,center);
+    gap:20px;
+    margin-bottom: 2rem;
+
+
+    li {
+      a{
+        // width: 2.5px;
+        @include width_height(2.5rem,2.5rem);
+        background-color: $first-color;
+        color: $white-color;
+        border-radius: 50%;
+        line-height: 2.5rem;
+
+      }
+    }
+
+  }
+
+  p{
+    padding: 18px;
+    background-color: #050000;
+    color: $text-color;
+  }
+}

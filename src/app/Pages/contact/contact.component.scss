@@ -1,0 +1,61 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixin';
+
+
+main{
+  @include width_height(100%,100vh);
+  @include flex_Container(flex,center,center);
+  flex-direction: column;
+
+  h2{
+    margin-bottom: 1rem;
+
+  }
+
+  form{
+    width: 50%;
+    @include responsive('small'){
+      width: 100%;
+    }
+    input,textarea{
+      width: 100%;
+      margin: 1rem 0px;
+      padding: 1rem;
+      border-radius: $border-radius-xlarge;
+      resize: none;
+      background-color: $container-color;
+      color: $white-color;
+
+
+      &::placeholder{
+        color: $text-color;
+      }
+
+      &:autofill{
+        transition: background-color 6000s , color 6000s;
+      }
+    }
+
+
+    textarea{
+      border-radius: $border-radius-large;
+      height: 10rem;
+      margin-bottom: 0.5rem !important;
+    }
+
+    p{
+      margin-bottom: 1.5rem;
+      padding-left: 10px;
+    }
+
+
+
+
+
+    button{
+      @include button_Style($first-color,$white-color,$border-radius-xlarge,$transition-slow);
+      width: 100%;
+    }
+  }
+
+}

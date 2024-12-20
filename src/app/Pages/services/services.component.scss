@@ -1,0 +1,60 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixin';
+main{
+  padding-top: 20px;
+
+
+  h2{
+    text-align: center;
+    margin-bottom: 2rem ;
+  }
+
+  .items{
+    @include grid_System(grid,auto-fill,center);
+    .box{
+      background-color: $container-color;
+      padding: 4rem 1.5rem 3.5rem 1.5rem;
+      border-radius: $border-radius-xlarge;
+      min-height: 340px;
+
+      &:hover{
+        i{
+
+          &::after{
+            transform: translate(0.25rem , -0.25rem);
+          }
+
+        }
+      }
+
+      i{
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        &::after{
+          content: '';
+          position: absolute;
+          right: -1rem;
+          top: -1rem;
+          width: 3rem;
+          height: 3rem;
+          background-color: $first-color;
+          border-radius: 50%;
+          z-index: -1;
+          transition: $transition-medium;
+        }
+      }
+
+      h3{
+        font-size: $h3-font-size;
+        margin-bottom: 1rem;
+      }
+      p{
+        color: $text-color;
+      }
+    }
+  }
+}

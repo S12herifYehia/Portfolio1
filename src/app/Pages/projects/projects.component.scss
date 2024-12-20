@@ -1,0 +1,97 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixin';
+
+main{
+
+  padding-top: 20px;
+
+  h2{
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .items{
+    @include grid_System(grid,auto-fill,center);
+
+
+
+    .box{
+      @include card();
+
+
+
+
+      .img_main{
+        width: 100%;
+        min-height: 10px;
+        overflow: hidden;
+        border-radius: $border-radius-xlarge;
+      }
+
+      &:hover{
+        .mainimg{
+          transform: scale(1.2);
+        }
+      }
+        .mainimg{
+
+          transition: $transition-medium;
+          border-radius: $border-radius-xlarge;
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+
+
+
+
+      .info{
+        h3{
+          font-size: $h3-font-size;
+          margin-bottom: 0.5rem;
+        }
+
+        p{
+          color: $text-color;
+          margin-bottom: 1rem;
+        }
+
+        .img{
+          @include flex_Container(flex,flex-start,center);
+
+          width: fit-content;
+          padding: 10px;
+          background-color: $black-color;
+          height: 35px;
+          line-height: 35px;
+          border-radius: $border-radius-medium;
+
+          img{
+            width: 15px;
+            margin: 0 !important;
+            transition: $transition-medium;
+
+            &:hover{
+              transform: translateY(-0.25rem);
+            }
+          }
+        }
+
+      }
+
+
+
+      a{
+        color: $white-color;
+        font-size: $normal-font-size;
+        margin-top: 1rem;
+        transition: $transition-medium;
+
+        &:hover{
+          color: $text-color;
+        }
+      }
+    }
+
+
+  }
+}

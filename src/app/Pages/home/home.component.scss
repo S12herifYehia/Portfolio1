@@ -1,0 +1,522 @@
+
+@import '../../../styles/vars';
+@import '../../../styles/mixin';
+
+.parent_main{
+  @include flex_Container(flex,flex-start,flex-start);
+  flex-wrap:wrap;
+  @include responsive('small'){
+    width: 100%;
+    justify-content: center;
+
+  }
+  @include responsive('large'){
+    justify-content: center;
+  }
+}
+.port_left_center{
+
+
+  @include flex_Container(flex,flex-start,flex-start);
+  flex-wrap: wrap;
+
+  @include responsive('small'){
+    flex-direction: column-reverse;
+  }
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+main{
+  .port_left{
+
+    width: 300px;
+
+    @include responsive('small'){
+      width: 100% !important;
+      margin: auto;
+
+    }
+
+    @include responsive('medium'){
+      width: 45%;
+
+    }
+
+    @include responsive('large'){
+      width: 41%;
+    }
+    .head{
+      @include card();
+      // padding: 1.3rem !important;
+
+      .logo{
+
+        text-align: center;
+        a{
+          color: $white-color;
+          position: relative;
+          width: 260px;
+          margin: auto;
+          font-size: 1.2rem;
+
+          &::after{
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%) scale(1);
+            @include width_height(1.5rem,1.5rem);
+            background-color: $first-color;
+            border-radius: 50%;
+            // transform: ;
+            border:2px solid $container-color;
+            border-top-color: $white-color;
+
+
+
+            animation: ss 2s linear infinite;
+            @keyframes ss {
+              0%{
+                transform: translateY(-50%) scale(1) rotate(0);
+                border-top-color:white ;
+              }
+              100%{
+                transform: translateY(-50%) scale(1.1) rotate(360deg);
+                border-top-color:rgba(255, 255, 255, 0.399) ;
+              }
+
+            }
+          }
+        }
+      }
+
+      .img{
+        width: 90%;
+        height: 180px;
+        background: $conic-gradient;
+        overflow: hidden;
+        display: grid;
+        border-radius: $border-radius-large;
+        margin-block: 1rem;
+        margin-inline: auto;
+
+        img{
+          width: 100px;
+          justify-self: center;
+          align-self: end;
+        }
+      }
+
+      .desc{
+        p{
+          font-size: $small-font-size;
+          margin-bottom: 1rem;
+        }
+        a{
+          @include button_Style($black-color,$white-color,$border-radius-xlarge,$transition-slow);
+          text-align: center;
+          width: 100%;
+          margin: auto;
+
+          &:hover{
+            background-color: $first-color-alt;
+          }
+        }
+      }
+    }
+
+  }
+
+
+  .skills{
+    margin-top: 1rem;
+
+  @include card();
+
+
+  h3{
+    font-size: $h2-font-size;
+  }
+
+  .items{
+    margin-block: 1rem;
+    .box{
+      @include flex_Container(flex,flex-start,center);
+      flex-wrap: wrap;
+      margin-block: 1rem;
+
+      img{
+        width: 20px;
+        transition: $transition-medium;
+        &:hover{
+          transform: translateY(-.25rem);
+
+        }
+      }
+
+    }
+    p{
+      font-size: $small-font-size;
+    }
+  }
+
+
+
+  }
+
+}
+
+.port_center{
+  width: 430px;
+  min-height: calc(100vh - $space-medium);
+  background: $conic-gradient;
+  border-radius: $border-radius-xlarge;
+  overflow: hidden;
+  position: relative;
+
+
+
+  @include responsive('small'){
+    width: 100%;
+  }
+  @include responsive('medium'){
+    width: 52%;
+
+  }
+
+  @include responsive('large'){
+    width: 55%;
+  }
+  .img{
+    width: 100%;
+    height: calc(100vh - $space-medium);
+    display: grid;
+
+    img{
+
+      width: 200px;
+      justify-self: center;
+      align-self: end;
+
+      @include responsive('small'){
+        margin-top: 100px;
+        width: 100%;
+
+      }
+
+    }
+  }
+
+  .info{
+
+
+    position: absolute;
+    left: 10px;
+    bottom: 30px;
+    padding: 1.5rem 1rem;
+    background-color: hsla(0 , 0% , 1% , .1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsla(0,0%,100%,0.5);
+    z-index: 10;
+    width: 90%;
+    border-radius: $border-radius-large;
+
+    @include responsive('small'){
+      width: 95%;
+    }
+    text{
+      font-size: $biggest-font-size;
+      letter-spacing: 2px;
+      animation: textAnimate 5s infinite alternate;
+
+      @include responsive('small'){
+        font-size: 2rem;
+      }
+@keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset:  20%;
+    fill:$white-color;
+
+  }
+
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffset: -20%;
+    fill: $white-color;
+  }
+
+}
+    }
+
+    .btns{
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      @include flex_Container(flex,center,center);
+
+      @include responsive('small'){
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      a{
+        @include button_Style($black-color,$white-color,$border-radius-xlarge,$transition-slow);
+        width: 140px;
+        text-align: center;
+        font-weight: $font-semi-bold;
+        &:nth-child(1){
+          background-color: $first-color;
+        }
+
+        &:hover{
+          background-color: $first-color-alt;
+        }
+      }
+    }
+  }
+}
+
+
+
+.port_right{
+  width: 300px;
+  background-color: $container-color;
+  min-height: calc(100vh - $space-medium);
+  @include card();
+
+  @include responsive('small'){
+    // width: 100%;
+    width: 80%;
+    min-height: 65vh;
+  }
+
+  @include responsive('medium'){
+    width: 100%;
+    min-height: 65vh;
+
+  }
+
+  .info{
+h2{
+      font-size: $normal-font-size;
+      font-weight: $font-regular;
+    }
+
+    .desc{
+      margin: 1rem 0px;
+      font-size: $small-font-size;
+    }
+
+    .links{
+      @include flex_Container(flex,center,center);
+      a{
+        @include flex_Container(flex,center,center);
+        @include width_height(2rem,2rem);
+        @include theme_Colors($white-color,$black-color);
+        border-radius: 50%;
+        font-size: $normal-font-size;
+        transition: $transition-medium;
+
+        &:hover{
+          @include theme_Colors($first-color,$white-color);
+        }
+
+      }
+
+    }
+    .img{
+      width: 100%;
+      height: 180px;
+      background: $conic-gradient;
+      border-radius: $border-radius-medium;
+      overflow: hidden;
+      display: grid;
+      margin: 1rem 0px;
+      img{
+        margin-top: 10px;
+        width: 180px;
+        justify-self: center;
+        align-self: end;
+      }
+    }
+
+    .contactme{
+      @include button_Style($black-color,$white-color,$border-radius-xlarge,$transition-slow);
+      text-align: center;
+      background-color: $first-color;
+      margin-top: 0.9rem;
+      &:hover{
+        background-color: $first-color-alt;
+      }
+    }
+  }
+
+
+}
+// loader
+
+.loading{
+  position: fixed;
+  left: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000000;
+  background-color: hsl(0deg 0% 1% / 92%);
+  @include flex_Container(flex,center,center);
+  flex-direction: column;
+
+  animation: hide 0.1s linear 1 forwards 2s;
+
+
+
+
+@keyframes hide {
+  0%{
+    transform: translateY(0);
+
+  }
+
+  100%{
+    transform: translateY(-100%);
+  }
+
+}
+
+
+h2{
+  font-size: 4rem;
+  letter-spacing: 3px;
+  color: transparent;
+  -webkit-text-stroke: 1px $white-color;
+  background: linear-gradient(to right ,$first-color,#FFEB3B,#8BC34A);
+  background-clip: text;
+  -webkit-background-clip:text ;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+  animation: textAnimation 2s ease-in-out 1;
+
+  @include responsive('small'){
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+
+  }
+
+
+  @keyframes textAnimation {
+    0% {
+      opacity: 0;
+      transform: scale(0.5) translateY(0%);
+    }
+
+
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(-20px);
+    }
+  }
+
+
+
+}
+
+
+}
+.loader{
+  display: block ;
+  height: 32px;
+  width: 200px;
+  position: relative;
+
+  background: $white-color;
+  border:2px solid $white-color;
+  color: $first-color;
+  border-radius: $border-radius-medium;
+  overflow: hidden;
+  &::before{
+    content: '';
+    background:$first-color;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    animation: loading 2s linear 1;
+  }
+
+
+&::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+  color: $white-color;
+  mix-blend-mode: difference;
+  animation: percentage 2s linear 1;
+}
+}
+
+
+@keyframes loading {
+  0%{ width: 0 ; background-color: $white-color; }
+  5% { width: 5%; background-color: $first-color; }
+  10% { width: 10%; background-color: $first-color; }
+  15% { width: 15%; background-color: $first-color; }
+  20% { width: 20%; background-color: $first-color; }
+  25% { width: 25%; background-color: $first-color; }
+  30% { width: 30%; background-color: $first-color; }
+  35% { width: 35%; background-color: $first-color; }
+  40% { width: 40%; background-color: $first-color; }
+  45% { width: 45%; background-color: $first-color; }
+  50% { width: 50%; background-color: #FFEB3B }
+  55% { width: 55%; background-color: #FFEB3B }
+  60% { width: 60%; background-color: #FFEB3B }
+  65% { width: 65%; background-color: #FFEB3B }
+  70% { width: 70%; background-color: #FFEB3B }
+  75% { width: 75%; background-color: #FFEB3B }
+  80% { width: 80%; background-color: #8BC34A;}
+  85% { width: 85%; background-color: #8BC34A;}
+  90% { width: 90%; background-color: #8BC34A;}
+  95% { width: 95%; background-color: #8BC34A;}
+  100% { width: 100%; background-color: #8BC34A;}
+}
+@keyframes percentage {
+  0% { content: "0%"}
+  5% { content: "5%"}
+  10% { content: "10%"}
+  20% { content: "20%"}
+  30% { content: "30%"}
+  40% { content: "40%"}
+  50% { content: "50%"}
+  60% { content: "60%"}
+  70% { content: "70%"}
+  80% { content: "80%"}
+  90% { content: "90%"}
+  95% { content: "95%"}
+  96% { content: "96%"}
+  97% { content: "97%"}
+  98% { content: "98%"}
+  99% { content: "99%"}
+  100% { content: "100%"}
+}

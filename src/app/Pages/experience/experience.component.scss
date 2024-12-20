@@ -1,0 +1,41 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixin';
+
+main{
+  padding: 20px 0px;
+  h2{
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .items{
+    @include grid_System(grid,auto-fill,flex-start);
+    .box{
+      @include card();
+      min-height: 860px;
+
+      @include responsive('small'){
+        min-height:630px ;
+      }
+
+      text-align: center;
+
+      i{
+        display: block;
+        font-size: 2.5rem;
+      }
+
+      h3{
+        font-size: $h3-font-size;
+        margin: 1rem 0px;
+
+      }
+
+      p{
+        color: $text-color;
+        text-align: justify;
+
+      }
+    }
+  }
+}
