@@ -46,6 +46,7 @@
               "node_modules/aos/dist/aos.css"
             ],
             "scripts": ["node_modules/aos/dist/aos.js"],
+            "baseHref": "/Portfolio1/",
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
